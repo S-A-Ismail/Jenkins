@@ -40,12 +40,12 @@ Setting up Docker.
    
 6) Create the files, directory structure and jenkins container:
 
-    cd /home/jenkins
-    mkdir jenkins-data
-    cd jenkins-data
-    vi docker-compose.yml
-    (copy the YAML file in this repo)
-    docker-compose up -d
+    cd /home/jenkins \
+    mkdir jenkins-data \
+    cd jenkins-data \
+    vi docker-compose.yml \
+    (copy the YAML file in this repo) \
+    docker-compose up -d \
     docker ps
      
 7) Docker commands to remember:
