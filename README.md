@@ -10,7 +10,7 @@ Setting up Docker.
 1) Download the minimalist CentOS 7 Image available.
 2) Installation on CentOs:
 
- sudo yum install -y yum-utils
+ sudo yum install -y yum-utils \
  sudo yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
@@ -21,19 +21,19 @@ Setting up Docker.
 
 3) Post installation steps:
 
- sudo groupadd docker
- sudo usermod -aG docker $USER
- newgrp docker
+ sudo groupadd docker \ 
+ sudo usermod -aG docker $USER \
+ newgrp docker \
 
 4) Docker commands to remember:
 
-    docker info
-    docker images
-    docker ps
-    docker logs <conatainerID> -f
-    docker exec -it <containerID> bash
+    docker info \
+    docker images \
+    docker ps \ 
+    docker logs <conatainerID> -f \
+    docker exec -it <containerID> bash \ 
 5) Check VM IP from
-    ip -a
+    ip -a \ 
 6) Set local DNS.
-  Enter IP and DNS in you machines c:/system32/drivers/etc/hosts file
+  Enter IP and DNS in you machines c:/system32/drivers/etc/hosts file \
 7) Jenkins will run on port 8080
