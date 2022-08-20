@@ -23,7 +23,7 @@ Setting up Docker.
 
  sudo groupadd docker \
  sudo usermod -aG docker $USER \
- newgrp docker \
+ newgrp docker 
 
 4) Docker commands to remember:
 
@@ -31,9 +31,9 @@ Setting up Docker.
     docker images \
     docker ps \
     docker logs <conatainerID> -f \
-    docker exec -it <containerID> bash \
+    docker exec -it <containerID> bash
 5) Check VM IP from
-    ip -a \ 
+    ip -a
 6) Set local DNS.
   Enter IP and DNS in your machines c:/system32/drivers/etc/hosts file
 7) Jenkins will run on port 8080
