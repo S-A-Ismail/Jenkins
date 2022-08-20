@@ -10,30 +10,56 @@ Setting up Docker.
 1) Download the minimalist CentOS 7 Image available.
 2) Installation on CentOs:
 
- sudo yum install -y yum-utils \
- sudo yum-config-manager \
-    --add-repo \
-    https://download.docker.com/linux/centos/docker-ce.repo
+   sudo yum install -y yum-utils \
+   sudo yum-config-manager \
+      --add-repo \
+      https://download.docker.com/linux/centos/docker-ce.repo
 
- sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin
- sudo systemctl start docker
- https://docs.docker.com/engine/install/centos/
+   sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+   sudo systemctl start docker
+   https://docs.docker.com/engine/install/centos/
 
 3) Post installation steps:
 
- sudo groupadd docker \
- sudo usermod -aG docker $USER \
- newgrp docker 
+   sudo groupadd docker \
+   sudo usermod -aG docker $USER \
+   newgrp docker 
 
-4) Docker commands to remember:
+4) Setting up docker-compose:
+
+   curl -SL https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose \
+   sudo chmod +x /usr/local/bin/docker-compose \
+   docker-compose --version \
+   sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose \
+   docker-compose --version
+
+5) Pulling the Jenkins Image:
+
+   docker pull jenkins/jenkins \
+   docker images
+   
+6) Create the files, directory structure and jenkins container:
+
+    cd /home/jenkins
+    mkdir jenkins-data
+    cd jenkins-data
+    vi docker-compose.yml
+    (copy the YAML file in this repo)
+    docker-compose up -d
+    docker ps
+     
+7) Docker commands to remember:
 
     docker info \
     docker images \
     docker ps \
     docker logs <conatainerID> -f \
     docker exec -it <containerID> bash
-5) Check VM IP from
+
+8) Check VM IP from
     ip -a
-6) Set local DNS.
+
+9) Set local DNS.
   Enter IP and DNS in your machines c:/system32/drivers/etc/hosts file
-7) Jenkins will run on port 8080
+
+10) Jenkins will run on port 8080
