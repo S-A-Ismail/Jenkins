@@ -32,6 +32,8 @@ Setting up Docker.
    docker-compose --version \
    sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose \
    docker-compose --version
+   
+Setting up Jenkins:
 
 5) Pulling the Jenkins Image:
 
